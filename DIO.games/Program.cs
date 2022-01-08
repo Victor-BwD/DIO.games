@@ -15,10 +15,10 @@ namespace DIO.games
                 switch (userOption)
                 {
                     case "1":
-                        //ListGames();
+                        ListGames();
                         break;
                     case "2":
-                        //InsertGame();
+                        InsertGame();
                         break;
                     case "3":
                         //UpdateGame();
@@ -39,6 +39,24 @@ namespace DIO.games
                 userOption = GetUserOption();
             }
 
+        }
+
+        private static void ListGames()
+        {
+            Console.WriteLine("Games list");
+
+            var list = repository.Lista();
+
+            if(list.Count == 0)
+            {
+                Console.WriteLine("No game found...");
+                return;
+            }
+
+            foreach(var game in list)
+            {
+                Console.WriteLine("#ID: {0}: - {1}", game.ReturnId(), game.ReturnTitle());
+            }
         }
 
 
