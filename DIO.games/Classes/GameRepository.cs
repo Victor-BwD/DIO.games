@@ -11,32 +11,32 @@ namespace DIO.games
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            listGames[id].Exclude();
         }
 
-        public void Insert(Games entity)
+        public void Insert(Games obj)
         {
-            throw new NotImplementedException();
+            listGames.Add(obj);
         }
 
         public List<Games> Lista()
         {
-            throw new NotImplementedException();
+            return listGames;
         }
 
         public int NextId()
         {
-            throw new NotImplementedException();
+            return listGames.Count;
         }
 
         public Games ReturnById(int id)
         {
-            throw new NotImplementedException();
+            return listGames[id];
         }
 
-        public void Update(int id, Games entity)
+        public void Update(int id, Games obj)
         {
-            throw new NotImplementedException();
+            listGames[id] = obj;
         }
     }
 }

@@ -16,6 +16,8 @@ namespace DIO.games
 
         private int Year { get; set; }
 
+        private bool Excluded { get; set; }
+
 
         public Games(int id, Genre genre, string title, string description, int year)
         {
@@ -24,6 +26,7 @@ namespace DIO.games
             this.Title = title;
             this.Description = description;
             this.Year = year;
+            this.Excluded = false;
         }
 
         public override string ToString()
@@ -45,6 +48,11 @@ namespace DIO.games
         public int ReturnId()
         {
             return this.Id;
+        }
+
+        public void Exclude()
+        {
+            this.Excluded = true;
         }
     }
 }
