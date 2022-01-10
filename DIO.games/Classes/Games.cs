@@ -35,7 +35,8 @@ namespace DIO.games
             retorno += "Genre: " + this.Genre + Environment.NewLine;
             retorno += "Title: " + this.Title + Environment.NewLine;
             retorno += "Description: " + this.Description + Environment.NewLine;
-            retorno += "Year: " + this.Year;
+            retorno += "Year: " + this.Year + Environment.NewLine;
+            retorno += "Deleted: " + this.Excluded;
 
             return retorno;
         }
