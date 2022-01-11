@@ -21,7 +21,7 @@ namespace DIO.games
                         InsertGame();
                         break;
                     case "3":
-                        //UpdateGame();
+                        UpdateGame();
                         break;
                     case "4":
                         //DeleteGame();
@@ -87,6 +87,36 @@ namespace DIO.games
                                       description: inputDescription);
 
             repository.Insert(newGame);
+        }
+
+        private static void UpdateGame()
+        {
+            Console.WriteLine("Type the game id: ");
+            int indexGame = int.Parse(Console.ReadLine());
+
+            foreach (int i in Enum.GetValues(typeof(Genre)))
+            {
+                Console.WriteLine("{0} - {1}", i, Enum.GetName(typeof(Genre), i));
+            }
+            Console.WriteLine("Type the genre between options above: ");
+            int inputGenre = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Type the game title: ");
+            string inputTitle = Console.ReadLine();
+
+            Console.WriteLine("Type game year:");
+            int inputYear = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Type game description: ");
+            string inputDescription = Console.ReadLine();
+
+            Games upGame = new Games(id: indexGame,
+                                     genre: (Genre)inputGenre,
+                                     title: inputTitle,
+                                     year: inputYear,
+                                     description: inputDescription);
+
+            repository.Update(indexGame, upGame);
         }
 
         private static string GetUserOption()
