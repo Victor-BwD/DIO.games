@@ -5,6 +5,8 @@ using DIO.games.Interfaces;
 
 namespace DIO.games
 {
+    // Implementar uma classe para a interface iRepository
+    // Class used in program.cs
     class GameRepository : iRepository<Games> // it will replace the T in iRepository with Games.
     {
         private List<Games> listGames = new List<Games>();

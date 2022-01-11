@@ -55,7 +55,9 @@ namespace DIO.games
 
             foreach(var game in list)
             {
-                Console.WriteLine("#ID: {0}: - {1}", game.ReturnId(), game.ReturnTitle());
+                var excluded = game.ReturnExcluded();
+
+                Console.WriteLine("#ID: {0}: - {1} - {2}", game.ReturnId(), game.ReturnTitle(), (excluded ? "'Deleted'" : ""));
             }
         }
         

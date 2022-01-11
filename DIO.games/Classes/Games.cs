@@ -51,6 +51,11 @@ namespace DIO.games
             return this.Id;
         }
 
+        public bool ReturnExcluded()
+        {
+            return this.Excluded;
+        }
+
         public void Exclude()
         {
             this.Excluded = true;
