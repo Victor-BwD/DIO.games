@@ -24,10 +24,10 @@ namespace DIO.games
                         UpdateGame();
                         break;
                     case "4":
-                        //DeleteGame();
+                        DeleteGame();
                         break;
                     case "5":
-                        //ViewGame();
+                        ViewGame();
                         break;
                     case "C":
                         Console.Clear();
@@ -117,6 +117,24 @@ namespace DIO.games
                                      description: inputDescription);
 
             repository.Update(indexGame, upGame);
+        }
+
+        private static void DeleteGame()
+        {
+            Console.WriteLine("Type game id: ");
+            int indexGame = int.Parse(Console.ReadLine());
+
+            repository.Delete(indexGame);
+        }
+
+        private static void ViewGame()
+        {
+            Console.WriteLine("Type the game id: ");
+            int indexGame = int.Parse(Console.ReadLine());
+
+            var game = repository.ReturnById(indexGame);
+
+            Console.WriteLine(game);
         }
 
         private static string GetUserOption()
